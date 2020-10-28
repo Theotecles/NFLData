@@ -6,10 +6,10 @@ import pandas as pd
 # SET UP SQL CONNECTION
 
 con = dbc.connect('Driver={SQL Server};'
-                  'Server=nfldatabase1.ckriwyveewcw.us-east-2.rds.amazonaws.com,1433;'
-                  'Database=NFLDATABASE1;'
-                  'UID=admin;'
-                  'PWD=MBDiJ81994!;')
+                  'Server=*****;'
+                  'Database=*****;'
+                  'UID=*****;'
+                  'PWD=*****;')
 
 cursor = con.cursor()
 
