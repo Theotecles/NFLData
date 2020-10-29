@@ -12,9 +12,17 @@ schedule <- purrr::map_df(seasons, function(x) {
 
 scores <- schedule %>%
             select(-surface, - roof) %>%
-              na.omit(schedule)
+              na.omit()
 
-write.csv(scores,"E:/NFLDataProject/CSVFiles/scores.csv")
+write.csv(scores,"E:/NFLDataProject/Local/CSVFiles/scores.csv")
+
+upcoming_games <- schedule %>%
+                    select(-surface, - roof)
+                      
+upcoming_games1 <- upcoming_games[!complete.cases(upcoming_games), ] %>%
+                    select(-home_score, -away_score, -home_result)
+
+write.csv(upcoming_games1,"E:/NFLDataProject/Local/CSVFiles/RawData/schedule.csv")
 
 pbp <- purrr::map_df(seasons, function(x) {
   readRDS(
@@ -24,4 +32,4 @@ pbp <- purrr::map_df(seasons, function(x) {
   )
 })
 
-write.csv(pbp, "E:/NFLDataProject/CSVFiles/RawData/plays.csv")
+write.csv(pbp, "E:/NFLDataProject/Local/CSVFiles/RawData/plays.csv")
