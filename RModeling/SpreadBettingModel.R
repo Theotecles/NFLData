@@ -10,10 +10,10 @@ library(lpSolveAPI)
 
 con <- dbConnect(odbc(),
                  Driver = "SQL Server",
-                 Server = "nfldatabase1.ckriwyveewcw.us-east-2.rds.amazonaws.com",
-                 Database = "NFLDATABASE1",
-                 UID = "admin",
-                 PWD = "MBDiJ81994!",
+                 Server = "*****",
+                 Database = "*****",
+                 UID = "*****",
+                 PWD = "*****",
                  Port = 1433)
 
 # PULL ALL REGULAR SEASON DATA FROM 2012 - 2020
